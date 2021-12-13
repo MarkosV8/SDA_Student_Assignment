@@ -50,13 +50,11 @@ print("______________________________________________________________")
 print(f"""By knowing how much every student weights:
 Elvis: {elvis.weight}kg, Andre: {andre.weight}kg, Grey: {grey.weight}kg, Maria: {maria.weight}kg,
 We can calculate their body mass indexes. 
-Elvis: {elvis.body_mass_index()}, Andre: {andre.body_mass_index()}, Grey: {grey.body_mass_index()}, Maria: {maria.body_mass_index()}
- """)
+Elvis: {elvis.body_mass_index()}, Andre: {andre.body_mass_index()}, Grey: {grey.body_mass_index()}, Maria: {maria.body_mass_index()}""")
 print("______________________________________________________________")
-print("""
-
-
-
-""")
-
+print(f"""As of 2021 students are very determined about their weight. So with their weight,
+we can also calculate their ideal weight
+Elvis: {elvis.ideal_weight()}, Andre: {andre.ideal_weight()}, Grey: {grey.ideal_weight()}, Maria: {maria.ideal_weight()} """)
+print("______________________________________________________________")
+print("")
 
