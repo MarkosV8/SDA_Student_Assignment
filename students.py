@@ -28,7 +28,7 @@ class Students:
 
     #Function to add Students grades to gradelist
     def grade_to_list(self, course, grade):
-        self.grades.append({course:grade})
+        self.grades.update({course:grade})
         return self.grades
 
     #Function to calculate Students average grades
@@ -38,13 +38,14 @@ class Students:
         for number, value in self.grades.items():
             number_of_grades += 1
             sum_of_grades += int(value)
-        return (sum_of_grades / number_of_grades)
+            return round(sum_of_grades / number_of_grades)
 
-
+    #Function to determine who passed school, who not
+    
 elvis = Students(19, 67, 178, "Elvis", "Robinson",  "male")
-andre = Students(21, 80, 163, "Andre", "Jobs", "male")
-grey = Students(23, 60, 155, "Grey", "Almond", "female")
-maria = Students(30, 80, 173, "Maria", "Tremble", "female")
+andre = Students(18, 80, 163, "Andre", "Jobs", "male")
+grey = Students(20, 60, 155, "Grey", "Almond", "female")
+maria = Students(17, 80, 173, "Maria", "Tremble", "female")
 
 print("______________________________________________________________")
 print(f"""By knowing how much every student weights:
@@ -56,5 +57,40 @@ print(f"""As of 2021 students are very determined about their weight. So with th
 we can also calculate their ideal weight
 Elvis: {elvis.ideal_weight()}, Andre: {andre.ideal_weight()}, Grey: {grey.ideal_weight()}, Maria: {maria.ideal_weight()} """)
 print("______________________________________________________________")
-print("")
+print(f"""Here is how many days Students have lived.
+Elvis: {elvis.days_alive()}days, Andre: {andre.days_alive()}days, Grey: {grey.days_alive()}days, Maria: {maria.days_alive()}days""")
+print("______________________________________________________________")
+elvis =  Students()
+elvis.grade_to_list("Math", "5")
+elvis.grade_to_list("Russian", "2")
+elvis.grade_to_list("Science", "3")
+andre = Students()
+andre.grade_to_list("Math", "2")
+andre.grade_to_list("Russian", "2")
+andre.grade_to_list("Science", "2")
+grey = Students()
+grey.grade_to_list("Math", "5")
+grey.grade_to_list("Russian", "5")
+grey.grade_to_list("Science", "5")
+maria = Students()
+maria.grade_to_list("Math", "4")
+maria.grade_to_list("Russian", "2")
+maria.grade_to_list("Science", "1")
 
+for course, value in elvis.grades.items():
+    print(f"Elvises {course} class has been graded as {value}")
+print("______________________________________________________________")
+for course, value in andre.grades.items():
+    print(f"Andres {course} class has been graded as {value}")
+print("______________________________________________________________")
+for course, value in grey.grades.items():
+    print(f"Greys {course} class has been graded as {value}")
+print("______________________________________________________________")
+for course, value in maria.grades.items():
+    print(f"Marias {course} class has been graded as {value}")
+print("______________________________________________________________")
+print(f"""
+Elvises average course grade is {elvis.calc_average_grade()}
+Andres average course grade is {andre.calc_average_grade()}
+Greys average course grade is {grey.calc_average_grade()}
+Marias average course grade is {maria.calc_average_grade()}""")
