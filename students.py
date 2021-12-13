@@ -40,8 +40,6 @@ class Students:
             sum_of_grades += int(value)
             return round(sum_of_grades / number_of_grades)
 
-    #Function to determine who passed school, who not
-    
 elvis = Students(19, 67, 178, "Elvis", "Robinson",  "male")
 andre = Students(18, 80, 163, "Andre", "Jobs", "male")
 grey = Students(20, 60, 155, "Grey", "Almond", "female")
@@ -89,8 +87,7 @@ print("______________________________________________________________")
 for course, value in maria.grades.items():
     print(f"Marias {course} class has been graded as {value}")
 print("______________________________________________________________")
-print(f"""
-Elvises average course grade is {elvis.calc_average_grade()}
+print(f"""Elvises average course grade is {elvis.calc_average_grade()}
 Andres average course grade is {andre.calc_average_grade()}
 Greys average course grade is {grey.calc_average_grade()}
 Marias average course grade is {maria.calc_average_grade()}""")
